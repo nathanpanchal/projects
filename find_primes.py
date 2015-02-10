@@ -1,4 +1,4 @@
-# the following code finds all the prime numbers between two values. Note this code excludes end value
+# the following code finds all the prime numbers between two values
 
 def is_prime(n):
     if n == 0 or n == 1:
@@ -12,6 +12,6 @@ def is_prime(n):
 begining = int(raw_input("Begining value: "))
 end = int(raw_input("End value: "))
 
-for n in range(begining, end):
+for n in range(begining, end): # end value is excluded
     if is_prime(n):
         print n
