@@ -1,8 +1,13 @@
+# Takes a desired weight and prints what plates need to be placed on each side of a barbel to
+# achive that weight.
+
 print "What is your desired weight: "
 weight = gets.chomp.to_f
 
+# Assumes the barbell being used is 45 lbs.
 n = (weight - 45) / 2
 
+# Weight plates are in lbs
 num_fourtyfive = 0
 num_thirtyfive = 0
 num_twentyfive = 0
@@ -49,25 +54,3 @@ You need the following:
 \t#{num_twohalf} two and a halfs
 """
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
