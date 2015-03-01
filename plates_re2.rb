@@ -10,5 +10,5 @@ def plates(weight, divisors)
 		remaining = remaining % n
 		plates << num.to_i
 	end
-	print plates
+	return plates
 end
