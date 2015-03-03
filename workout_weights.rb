@@ -15,7 +15,7 @@ end
 print "How much weight did you lift? "
 weight_lifted = gets.chomp.to_f
 
-print "How many time did you do lift it? "
+print "How many times did you do lift it? "
 reps = gets.chomp.to_i
 
 estimated_max = weight_lifted * reps * 0.0333 + weight_lifted
