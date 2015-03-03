@@ -12,11 +12,16 @@ def plates(weight, plates)
 end
 
 
-print "What is your max? "
-weight = gets.chomp.to_f
+print "How much weight did you lift? "
+weight_lifted = gets.chomp.to_f
 
-puts plates(weight * 0.6, imperial_plates)
-puts plates(weight * 0.65, imperial_plates)
-puts plates(weight * 0.7, imperial_plates)
-puts plates(weight * 0.75, imperial_plates)
-puts plates(weight * 0.8, imperial_plates)
+print "How many time did you do lift it? "
+reps = gets.chomp.to_i
+
+estimated_max = weight_lifted * reps * 0.0333 + weight_lifted
+
+puts plates(estimated_max * 0.6, imperial_plates)
+puts plates(estimated_max * 0.65, imperial_plates)
+puts plates(estimated_max * 0.7, imperial_plates)
+puts plates(estimated_max * 0.75, imperial_plates)
+puts plates(estimated_max * 0.8, imperial_plates)
