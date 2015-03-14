@@ -1,16 +1,14 @@
 imperial_plates = [45, 35, 25, 10, 5, 2.5]
 
-
 def plates(weight, plates)
 	side_weight = (weight - 45) / 2
 	remaining = side_weight
-	plates.map do |plate|
-		num = remaining / plate
-		remaining = remaining % plate
+	plates.map do |plate_weight|
+		num = remaining / plate_weight
+		remaining = remaining % plate_weight
 		num.to_i
 	end.inspect
 end
-
 
 print "How much weight did you lift? "
 weight_lifted = gets.chomp.to_f
