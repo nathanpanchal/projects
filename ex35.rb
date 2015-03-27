@@ -6,8 +6,10 @@ def gold_room
   print '> '
   choice = gets.chomp
 
-  #this line has a bug, so fix it
-  if choice.include?('1') || choice.include?('1')
+  # The code below tests to see if the input was a number. The original test was
+  # "if choice.include?("0") || choice.include?("1")" this throws an error if the 
+  # input does not contain a 1 or a 0.
+  if choice.to_i.to_s == choice
     how_much = choice.to_i
   else
     puts 'Man learn to type a number.'
@@ -58,7 +60,7 @@ def cthulhu_room
 
   if choice.include? 'head'
     dead('You saw that coming...I bet it wasn\'t tasty')
-  elsif chice.include? 'flee'
+  elsif choice.include? 'flee'
     start
   else
     cthulhu_room
@@ -80,7 +82,7 @@ def start
 
   if choice == 'left'
     bear_room
-  elsif chice == 'right'
+  elsif choice == 'right'
     cthulhu_room
   else
     dead('You stumble around the room until you starve.')
