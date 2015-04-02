@@ -20,7 +20,7 @@ def gold_room
 		exit(0)
 	else
 		puts 'Greed got the better of you.'
-		dead('You were consumed with the riches in thr room and thus wasted away')
+		dead('You were consumed with the riches in the room and slowly wasted away')
 	end
 end
 
@@ -55,13 +55,13 @@ end
 
 def dragon_room
 	puts 'You hear a deep snoring.'
-	puts 'In the fiant light you can make out a dragon.'
+	puts 'In the faint light you can make out a dragon.'
 	puts 'You can see something glistening through the doorway on the other side.'
 	puts 'How do you get over there?'
 
-while true
-	print '> '
-	choice = gets.chomp
+	while true
+		print '> '
+		choice = gets.chomp
 
 		if choice.include?('run')
 			puts 'You book it. The dragon hears your steps and wakes up'
@@ -80,6 +80,48 @@ while true
 			puts 'That action is not possible in this room. Try again...'
 		end
 	end
+
 end
 
-snake_room
+def shark_room
+	puts 'You open the door and the only option is to dive into a pool'
+	puts 'Thankfully there is some scuba gear near by. You put it on and jump in'
+	puts 'There are sharks everywhere but you see a strange portal a hundred yards away'
+	puts 'How to you get to it?'
+
+	while true
+		print '> '
+		choice = gets.chomp
+
+		if choice.include?('swim')
+			puts 'You cautiosly swim across the pool'
+			puts 'The skarks pay little attention to you let you by...its your lucky day'
+			puts 'You take the portal and are teleported to another room'
+			gold_room
+		elsif choice.include?('fight') || choice.include?('challenge')
+			puts 'It is not a good idea to fight skarks'
+			dead('You were chomped in half!')
+		else
+			puts 'That action is not possible in this room. Try again...'
+		end
+	end
+
+end
+
+def game
+	puts 'You are in a room with two doors.'
+	puts 'Do you take the one on the left or the one on the right?'
+
+	puts '> '
+	choice = gets.chomp
+
+	if choice.include?('left')
+		shark_room
+	elsif choice.include?('right')
+		snake_room
+	else
+		dead 'You stand there and starve to death'
+	end
+end
+
+game
