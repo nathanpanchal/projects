@@ -12,6 +12,7 @@ def computer_choice()
     computer_choice = 'scissors'
   end
   puts "Computer: #{computer_choice}"
+  return computer_choice
 end
 
 def compare(choice1, choice2)
