@@ -30,12 +30,14 @@ def compare(choice1, choice2)
     else
       puts 'scissors wins!'
     end
-  else
+  elsif choice1 == 'scissors'
     if choice2 == 'paper'
       puts 'scissors wins!'
     else
       puts 'rock wins!'
     end
+  else
+    puts "Please make a valid selection"
   end
 end
 
